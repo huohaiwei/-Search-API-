@@ -54,7 +54,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         //用户编号长度校验
         if (userCode.length()>5)throw new BusinessException(ErrorCode.PARAMS_ERROR,"用户编号大于5位数");;
         //账户不能包含特殊字符
-        String validPattern = ".*[[ _`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\\\\n|\\\\r|\\\\t].*";
+        String validPattern = "[_`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
         Matcher matcher = Pattern.compile(validPattern).matcher(userAccount);
         if (matcher.find()) throw new BusinessException(ErrorCode.PARAMS_ERROR,"账户包含特殊字符");;
         //两次密码是否相同
