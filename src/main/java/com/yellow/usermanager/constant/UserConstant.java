@@ -14,11 +14,15 @@ public interface UserConstant {
     /**
      * 普通用户角色
      */
-    int DEFAULT_ROLE = 0;
+    String DEFAULT_ROLE = "user";
 
     /**
      * 管理员角色
      */
-    int ADMIN_ROLE = 1;
+    String ADMIN_ROLE = "admin";
 
+    /**
+     * 被封号
+     */
+    String BAN_ROLE = "ban";
 }

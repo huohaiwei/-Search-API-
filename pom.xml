@@ -9,10 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yellow</groupId>
-    <artifactId>Usermanager</artifactId>
+    <artifactId>yellowapi-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Usermanager</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+    <name>yellowapi-backend</name>
+    <description>API开放平台</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -27,10 +28,37 @@
             <version>2.2.2</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.2</version>
         </dependency>
+
+        <!-- redis -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.6.7</version>
+        </dependency>
+        <!--spring session 和 Redis整合，可以自动将session存储到redis中-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.session/spring-session-data-redis -->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+            <version>2.6.3</version>
+        </dependency>
+        <!-- Redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.23.2</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -73,8 +101,100 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.15.2</version>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <!-- hutool工具包 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.8</version>
+        </dependency>
 
+        <!--引入Knife4j的官方start包,Swagger2基于Springfox2.10.5项目-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <!--使用Swagger2-->
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <!--引入Knife4j的官方ui包,OpenAPI3建议使用springdoc-openapi项目-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-ui</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <!-- https://easyexcel.opensource.alibaba.com/ -->
+        <!--easyExcel-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+
+        <!-- 自定义的包 -->
+        <dependency>
+            <groupId>com.yellow</groupId>
+            <artifactId>yellowapi-client-sdk</artifactId>
+            <version>0.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yellow</groupId>
+            <artifactId>yellowapi-common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <!-- dubbo&nacos -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>3.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <!-- elasticsearch -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+
+        <!-- canal -->
+        <dependency>
+            <groupId>com.alibaba.otter</groupId>
+            <artifactId>canal.client</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.otter</groupId>
+            <artifactId>canal.common</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.otter</groupId>
+            <artifactId>canal.protocol</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+
+        <!-- Jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.15.3</version>
+        </dependency>
+
+        <!-- 阿里云oss -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.17.4</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
