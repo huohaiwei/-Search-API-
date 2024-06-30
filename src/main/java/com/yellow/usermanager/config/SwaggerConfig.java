@@ -31,6 +31,7 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.yellow.usermanager.controller"))
                 .paths(PathSelectors.any())
                 .build();
+
     }
 
     /**
