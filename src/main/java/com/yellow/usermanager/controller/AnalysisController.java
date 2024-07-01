@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 @RestController
 @Slf4j
 @RequestMapping("/analysis")
-@CrossOrigin(origins = {"http://localhost:8000"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:8000","https://poorly-desired-macaw.ngrok-free.app"}, allowCredentials = "true")
 public class AnalysisController {
 
     @Resource

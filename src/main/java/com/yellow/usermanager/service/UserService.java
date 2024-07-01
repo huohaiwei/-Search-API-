@@ -9,6 +9,7 @@ import com.yellow.usermanager.model.vo.LoginUserVO;
 import com.yellow.usermanager.model.vo.UserVO;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -36,7 +37,7 @@ public interface UserService extends IService<User> {
      * @param request 会话请求
      * @return  脱敏后的用户信息
      */
-    LoginUserVO userLogin(String userAccount, String userPassword, HttpServletRequest request);
+    LoginUserVO userLogin(String userAccount, String userPassword, HttpServletRequest request, HttpServletResponse response);
 
     /**
      * 退出登录

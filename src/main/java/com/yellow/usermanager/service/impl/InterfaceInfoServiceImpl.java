@@ -217,14 +217,14 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
                     .collect(Collectors.toList());
             // 从数据库中取出更完整的数据
             List<InterfaceInfo> interfaceInfoList = baseMapper.selectBatchIds(interfaceInfoIds);
-            if (interfaceInfoList != null) {
+            if (interfaceInfoList.size()!=0) {
                 Map<Long, List<InterfaceInfo>> idInterfaceMap = interfaceInfoList.stream().collect(Collectors.groupingBy(InterfaceInfo::getId));
-                interfaceInfoIds.forEach(postId -> {
-                    if (idInterfaceMap.containsKey(postId)) {
-                        resourceList.add(idInterfaceMap.get(postId).get(0));
+                interfaceInfoIds.forEach(interfaceId -> {
+                    if (idInterfaceMap.containsKey(interfaceId)) {
+                        resourceList.add(idInterfaceMap.get(interfaceId).get(0));
                     } else {
                         // 从 es 清空 db 已物理删除的数据
-                        String delete = elasticsearchRestTemplate.delete(String.valueOf(postId), InterfaceInfo.class);
+                        String delete = elasticsearchRestTemplate.delete(String.valueOf(interfaceId), InterfaceInfo.class);
                         log.info("delete post {}", delete);
                     }
                 });

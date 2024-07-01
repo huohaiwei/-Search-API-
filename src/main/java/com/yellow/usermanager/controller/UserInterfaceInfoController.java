@@ -33,7 +33,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/userInterfaceInfo")
-@CrossOrigin(origins = {"http://localhost:8000"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:8000","https://poorly-desired-macaw.ngrok-free.app"}, allowCredentials = "true")
 @Slf4j
 public class UserInterfaceInfoController {
 

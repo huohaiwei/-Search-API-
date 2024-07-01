@@ -30,7 +30,7 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("/search")
 @Slf4j
-@CrossOrigin(origins = {"http://localhost:8000"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:8000","https://poorly-desired-macaw.ngrok-free.app"}, allowCredentials = "true")
 public class SearchController {
 
     @Resource
